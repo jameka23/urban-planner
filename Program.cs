@@ -7,6 +7,9 @@ namespace Planner
     {
         static void Main(string[] args)
         {
+            // make a new instance of a City
+            City Happyville = new City("Happyville");
+
             Building FiveOneTwoEigth = new Building("512 8th Avenue");
             Building SeseameStreet = new Building("123 Lame Jon Ave");
             Building MainStreet = new Building("982 Main Street");
@@ -34,11 +37,17 @@ namespace Planner
             SeseameStreet.Purchase("Chaffin Schafer");
             MainStreet.Purchase("Ben Echols");
 
-            List<Building> bldgs = new List<Building>(){
-                FiveOneTwoEigth, SeseameStreet, MainStreet
-            };
+            // List<Building> bldgs = new List<Building>(){
+            //     FiveOneTwoEigth, SeseameStreet, MainStreet
+            // };
+
+            // Add each bldg to the city 
+            Happyville.AddBuilding(FiveOneTwoEigth);
+            Happyville.AddBuilding(SeseameStreet);
+            Happyville.AddBuilding(MainStreet);
+
             // console writeline 
-            foreach(Building bldg in bldgs){
+            foreach(Building bldg in Happyville.BuildingList){
                 Console.WriteLine(bldg.bldingAddress());
                 Console.WriteLine("----------------------");
                 Console.WriteLine($"Designed by: {bldg.designer()}");
